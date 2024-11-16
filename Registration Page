@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('your-image-url.jpg') center/cover no-repeat;
+        }
+        .register-box {
+            background: white;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-box">
+        <h2>Register</h2>
+        <form action="exam.php" method="POST">
+<label>username</label>
+            <input type="text" placeholder="Username" name="username" required>
+<label>email</label>
+            <input type="email" placeholder="Email" name="email" required>
+<label>password</label>
+            <input type="password" placeholder="Password" name="password" required>
+<Label>confrmpassword</label>
+            <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
