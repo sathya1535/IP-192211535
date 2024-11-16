@@ -1,0 +1,25 @@
+<?php
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$confirmpassword = $_POST['confirmpassword'];
+
+// Creating the database connection
+$conn = new mysqli('localhost', 'root', '', 'exam');
+if ($conn->connect_error) {
+    die('Connection Failed: ' .$conn-> connect_error);
+} else {
+    $stmt = $conn->prepare("INSERT INTO Madhav (username, email, password, confirmpassword) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $username, $email, $password, $confirmpassword);
+    
+    // Execute the query
+    if ($stmt->execute()) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
